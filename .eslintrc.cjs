@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: "airbnb-base",
+  extends: "eslint:recommended",
   overrides: [
     {
       env: {
@@ -21,5 +21,6 @@ module.exports = {
   },
   rules: {
     quotes: ["error", "double", { avoidEscape: true }],
+    "func-names": ["error", "as-needed"],
   },
 };
