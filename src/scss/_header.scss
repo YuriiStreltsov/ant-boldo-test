@@ -12,7 +12,7 @@ header {
     z-index: 1;
     right: 0;
     top: 0;
-    transform: translate(50%, -70%);
+    transform: translate(52%, -63%);
 
     @include responsive(xl) {
       width: 1296px;
@@ -24,7 +24,18 @@ header {
 .nav-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 1.25rem;
+  align-items: center;
+  margin-top: 2rem;
+  @include responsive(md) {
+    margin-top: 3.5rem;
+  }
+
+  & .logo {
+    color: var(--main-color);
+    &__brand-element {
+      background-color: var(--accent-color);
+    }
+  }
 
   &__burger {
     display: flex;
@@ -36,7 +47,7 @@ header {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10;
+    z-index: 20;
 
     .burger__line {
       width: 100%;
@@ -64,10 +75,11 @@ header {
   }
 
   &__menu {
-    z-index: 2;
+    z-index: 10;
     @media (max-width: $max) {
+      text-align: center;
       height: 100vh;
-      padding: 3rem 1rem;
+      padding: 6rem 1.5rem;
       width: 30%;
       position: absolute;
       top: 0;
@@ -83,7 +95,12 @@ header {
 
     @include responsive(md) {
       display: flex;
-      gap: 1.25rem;
+      gap: 2.5rem;
+      align-items: center;
+
+      & .btn__outline-light {
+        outline: transparent;
+      }
     }
 
     &.opened {
@@ -92,11 +109,25 @@ header {
   }
 
   &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-weight: 600;
+    color: var(--second-color);
+    margin-bottom: 1.5rem;
+    gap: 1.5rem;
     @include responsive(md) {
-      display: flex;
+      flex-direction: row;
+      margin-bottom: 0;
       color: var(--main-color);
-      gap: 1.25rem;
+      gap: 2.5rem;
     }
   }
+
+  // &__link-item {
+  //   margin-bottom: 1.5rem;
+  //   @include responsive(md) {
+  //     margin-bottom: 0;
+  //   }
+  // }
 }

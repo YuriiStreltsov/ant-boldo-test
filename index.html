@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Boldo</title>
   </head>
@@ -10,7 +16,16 @@
     <header class="container-out">
       <!-- Navigation -->
       <nav class="nav-header">
-        <div class="logo">Logo</div>
+        <a href="/">
+          <div class="logo">
+            <div class="logo__brand">
+              <div class="logo__brand-element"></div>
+              <div class="logo__brand-element"></div>
+            </div>
+            <span>Boldo</span>
+          </div>
+        </a>
+
         <button class="nav-header__burger" id="burgerButton">
           <span class="burger__line animate"></span>
           <span class="burger__line animate"></span>
@@ -18,11 +33,17 @@
         </button>
         <div class="nav-header__menu animate">
           <ul class="nav-header__links">
-            <li class="button-group-link-item">Product</li>
-            <li class="button-group-link-item">Services</li>
-            <li class="button-group-link-item">About</li>
+            <li class="nav-header__link-item">
+              <a href="#product">Product</a>
+            </li>
+            <li class="nav-header__link-item">
+              <a href="#services">Services</a>
+            </li>
+            <li class="nav-header__link-item"><a href="#about">About</a></li>
           </ul>
-          <button class="nav-header__login">Log In</button>
+          <button class="nav-header__login btn btn__primary btn__outline-light">
+            Log In
+          </button>
         </div>
       </nav>
 

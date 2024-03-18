@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: "OpenSans";
+  font-family: "Open Sans";
   font-size: 16px;
   line-height: 1.75;
   color: var(--main-text-color);
@@ -36,4 +36,60 @@ body {
 
 .animate {
   transition: all 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.logo {
+  font-family: "Manrope";
+  font-size: 43.25px;
+  line-height: 0.7;
+  font-weight: 700;
+  position: relative;
+  display: flex;
+
+  &__brand {
+    margin-right: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__brand-element:first-child {
+    width: 0.41em;
+    height: 0.3em;
+
+    border-top-right-radius: calc(0.3em / 2);
+    border-bottom-right-radius: calc(0.3em / 2);
+  }
+
+  &__brand-element:last-child {
+    width: 0.6em;
+    height: 0.41em;
+    border-top-right-radius: calc(0.41em / 2);
+    border-bottom-right-radius: calc(0.41em / 2);
+  }
+}
+
+.btn {
+  @extend .animate;
+  cursor: pointer;
+  font-weight: 700;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &__outline-light {
+    background-color: var(--main-color);
+    outline: 2px solid var(--second-color);
+  }
+
+  &__primary {
+    padding: 0.5rem 2.5rem;
+    border-radius: 2.5rem;
+  }
+
+  &__primary:hover {
+    background-color: var(--accent-color);
+    // outline: transparent;
+  }
 }
