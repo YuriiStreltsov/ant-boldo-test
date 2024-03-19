@@ -2,6 +2,7 @@ html,
 body {
   font-family: "Open Sans";
   font-size: 16px;
+  font-weight: 300;
   line-height: 1.75;
   color: var(--main-text-color);
   position: relative;
@@ -40,11 +41,14 @@ body {
 
 .logo {
   font-family: "Manrope";
-  font-size: 43.25px;
+  font-size: 32px;
   line-height: 0.7;
   font-weight: 700;
   position: relative;
   display: flex;
+  @include responsive(md) {
+    font-size: 43.25px;
+  }
 
   &__brand {
     margin-right: 11px;
@@ -73,23 +77,44 @@ body {
   @extend .animate;
   cursor: pointer;
   font-weight: 700;
+  background-color: inherit;
+  color: inherit;
+  outline: 2px solid currentColor;
+  padding: 0.5rem 2.5rem;
+  border-radius: 2.5rem;
+
+  &__large {
+    padding: 1rem 3.5rem;
+    border-radius: 3.5rem;
+  }
+
+  &:hover {
+    color: currentColor;
+    background-color: var(--accent-color);
+    outline: transparent;
+  }
 
   &:active {
     transform: translateY(1px);
   }
+}
 
-  &__outline-light {
-    background-color: var(--main-color);
-    outline: 2px solid var(--second-color);
+h1 {
+  font-family: "Manrope";
+  font-size: 2rem;
+  line-height: 1.5;
+  @include responsive(md) {
+    font-size: 3rem;
+    line-height: 1.5;
   }
+}
 
-  &__primary {
-    padding: 0.5rem 2.5rem;
-    border-radius: 2.5rem;
-  }
+a {
+  @extend .animate;
+}
 
-  &__primary:hover {
-    background-color: var(--accent-color);
-    // outline: transparent;
-  }
+img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }

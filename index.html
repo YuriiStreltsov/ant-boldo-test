@@ -5,11 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
-      rel="stylesheet"
-    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Boldo offers a modern and efficient template for website development. Save time and build fast with our customizable solutions. Explore our services, products, and innovative features today."
+    />
+
     <title>Boldo</title>
   </head>
   <body>
@@ -26,12 +30,12 @@
           </div>
         </a>
 
-        <button class="nav-header__burger" id="burgerButton">
-          <span class="burger__line animate"></span>
-          <span class="burger__line animate"></span>
-          <span class="burger__line animate"></span>
+        <button class="nav-header__burger" id="burgerButton" aria-label="Menu">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
         </button>
-        <div class="nav-header__menu animate">
+        <div class="nav-header__menu">
           <ul class="nav-header__links">
             <li class="nav-header__link-item">
               <a href="#product">Product</a>
@@ -41,29 +45,73 @@
             </li>
             <li class="nav-header__link-item"><a href="#about">About</a></li>
           </ul>
-          <button class="nav-header__login btn btn__primary btn__outline-light">
-            Log In
-          </button>
+          <a href="#login" class="nav-header__login btn">Log In</a>
         </div>
       </nav>
 
       <!-- Hero -->
-      <div>
+      <div class="hero">
         <!-- Tagline -->
-        <div>
-          <h1></h1>
-          <p></p>
-          <div>
-            <button>Buy template</button>
-            <button>Explore</button>
+        <div class="hero-tagline">
+          <h1 class="hero-tagline__heading">
+            Save time by building fast with Boldo Template
+          </h1>
+          <p class="hero-tagline__text">
+            Funding handshake buyer business-to-business metrics iPad
+            partnership. First mover advantage innovator success deployment
+            non-disclosure.
+          </p>
+          <div class="hero-tagline__actions">
+            <button type="button" class="hero-tagline__button btn btn__large">
+              Buy template
+            </button>
+            <button type="button" class="hero-tagline__button btn btn__large">
+              Explore
+            </button>
           </div>
         </div>
         <!-- Charts -->
-        <div></div>
+        <div class="hero-charts">
+          <ul>
+            <li>
+              <picture>
+                <source srcset="./src/img/webp/Chart-1.webp" />
+                <img
+                  src="./src/img/charts/Chart-1.png"
+                  alt="Chart 1 - Sales Data for Q1 2022"
+                  width="494"
+                  height="232"
+                />
+              </picture>
+            </li>
+            <li>
+              <picture>
+                <source srcset="./src/img/webp/Chart-2.webp" />
+                <img
+                  src="./src/img/charts/Chart-2.png"
+                  alt="Chart 2 - Revenue Growth for 2022"
+                  width="193"
+                  height="166"
+                />
+              </picture>
+            </li>
+            <li>
+              <picture>
+                <source srcset="./src/img/webp/Chart-3.webp" />
+                <img
+                  src="./src/img/charts/Chart-3.png"
+                  alt="Chart 3 - User Engagement for Q1 2022"
+                  width="262"
+                  height="166"
+                />
+              </picture>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <!-- Slider hero -->
-      <div>Slider</div>
+      <div class="slider-header">Slider</div>
     </header>
     <main></main>
     <footer></footer>

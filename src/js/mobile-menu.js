@@ -17,6 +17,7 @@ function toggleMenu() {
 
 function init() {
   refs.button.addEventListener("click", toggleMenu);
+  refs.menu.addEventListener("click", toggleMenu);
 }
 
 document.addEventListener("DOMContentLoaded", () => {

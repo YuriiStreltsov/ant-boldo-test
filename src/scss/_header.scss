@@ -1,6 +1,12 @@
 header {
   background: var(--second-color);
   overflow: hidden;
+  padding-top: 2rem;
+  padding-bottom: 1.5rem;
+  @include responsive(md) {
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
+  }
 
   &::after {
     content: "";
@@ -25,10 +31,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 2rem;
-  @include responsive(md) {
-    margin-top: 3.5rem;
-  }
 
   & .logo {
     color: var(--main-color);
@@ -50,6 +52,7 @@ header {
     z-index: 20;
 
     .burger__line {
+      @extend .animate;
       width: 100%;
       height: 2px;
       background-color: #fff;
@@ -75,12 +78,13 @@ header {
   }
 
   &__menu {
+    @extend .animate;
     z-index: 10;
     @media (max-width: $max) {
       text-align: center;
       height: 100vh;
       padding: 6rem 1.5rem;
-      width: 30%;
+      width: 100%;
       position: absolute;
       top: 0;
       bottom: 0;
@@ -97,14 +101,20 @@ header {
       display: flex;
       gap: 2.5rem;
       align-items: center;
-
-      & .btn__outline-light {
-        outline: transparent;
-      }
     }
 
     &.opened {
       transform: translateX(0);
+    }
+  }
+
+  &__login {
+    &:hover {
+      color: var(--main-color);
+    }
+    @include responsive(md) {
+      background-color: var(--main-color);
+      outline: transparent;
     }
   }
 
@@ -124,10 +134,85 @@ header {
     }
   }
 
-  // &__link-item {
-  //   margin-bottom: 1.5rem;
-  //   @include responsive(md) {
-  //     margin-bottom: 0;
-  //   }
-  // }
+  &__link-item:hover {
+    color: var(--accent-color);
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  margin-top: 4rem;
+  color: var(--main-color);
+
+  @include responsive(xl) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.hero-tagline {
+  @include responsive(xl) {
+    width: 46%;
+  }
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    margin-bottom: 2.5rem;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+    @include responsive(sm) {
+      display: flex;
+      flex-direction: row;
+      column-gap: 1.5rem;
+    }
+  }
+
+  &__button:hover {
+    color: var(--second-color);
+  }
+}
+
+.hero-charts {
+  display: none;
+
+  @include responsive(xl) {
+    display: block;
+    width: 41%;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: 0.425fr 0.575fr;
+    grid-template-rows: 0.6fr 0.4fr;
+    grid-column-gap: 2.3rem;
+    grid-row-gap: 1.64rem;
+  }
+
+  li:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 3;
+  }
+  li:nth-child(2) {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  li:nth-child(3) {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+}
+
+.slider-header {
+  display: none;
+  @include responsive(md) {
+    display: block;
+  }
 }
