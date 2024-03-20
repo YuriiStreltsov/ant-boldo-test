@@ -168,6 +168,7 @@ header {
   }
 
   &__actions {
+    font-size: 1.25rem;
     display: flex;
     flex-direction: column;
     row-gap: 1.5rem;
@@ -199,6 +200,10 @@ header {
     grid-row-gap: 1.64rem;
   }
 
+  & img {
+    border-radius: 1rem;
+  }
+
   li:nth-child(1) {
     grid-area: 1 / 1 / 2 / 3;
   }
@@ -214,5 +219,34 @@ header {
   display: none;
   @include responsive(md) {
     display: block;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    margin-top: 3.5rem;
+    padding: 2rem 2px;
+    color: var(--main-color);
+
+    &::before {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 2;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-image: linear-gradient(
+        to right,
+        rgba(10, 38, 64, 1),
+        rgba(10, 38, 64, 0),
+        rgba(10, 38, 64, 0.11),
+        rgba(10, 38, 64, 1)
+      );
+    }
+  }
+
+  & .swiper-wrapper {
+    gap: 4rem;
   }
 }
